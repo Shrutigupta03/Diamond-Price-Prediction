@@ -14,13 +14,13 @@
         }
 
         form{
-            width: 50%;
+            width: 65%;
             margin: 32px auto 10px auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 15px 10px 0px 10px;
+            padding: 30px 10px 0px 10px;
             color: rgb(255, 255, 255);
             /* border: 2px solid rgb(196, 198, 199); */
             box-shadow: 0px 0px 15px 4px rgba(113, 113, 113, 0.562);
@@ -30,7 +30,7 @@
         div.form-group{
             display: flex;
             flex-direction: row;
-            width: 403px;
+            width: 600px;
             align-items: center;
             justify-content: center;
             margin: 5px;
@@ -59,7 +59,7 @@
         }
         div.btn input{
             width: 200px;
-            height: 35px;
+            height: 40px;
             font-size: 20px;
             font-weight: bold;
             border-radius: 12px;
@@ -116,7 +116,7 @@
             height: 200px;
         }
         label{
-            width: 220px;
+            width: 350px;
         }
 
     </style>
@@ -126,37 +126,37 @@
 <div style="text-align: center; color: white; font-size: 20px; margin-top: 10px;">Enter the values to predict the price of the diamond</div>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
-        <label for="carat">Carat :</label>
+        <label for="carat">Carat (weight of the diamond):</label>
         <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
     </div>
 
     <div class="form-group">
-        <label for="depth">Depth :</label>
+        <label for="depth">Depth (Total depth percentage):</label>
         <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
     </div>
 
     <div class="form-group">  
-        <label for="table">Table :</label>
+        <label for="table">Table (width of top of diamond):</label>
         <input type="text" id="table" name="table" placeholder="Enter table value (float)">
     </div>
     
     <div class="form-group">
-        <label  for="x">x :</label>
+        <label  for="x">x (length in mm):</label>
         <input type="text" id="x" name="x" placeholder="Enter x value (float)">
     </div>
   
     <div class="form-group">
-        <label  for="y">y :</label>
+        <label  for="y">y (width in mm):</label>
         <input  type="text" id="y" name="y" placeholder="Enter y value (float)">
     </div>
   
     <div class="form-group">
-        <label for="z">z :</label>
+        <label for="z">z (depth in mm):</label>
         <input type="text" id="z" name="z" placeholder="Enter z value (float)">
     </div>         
   
 <div class="form-group">
-  <label for="cut">Cut :</label>
+  <label for="cut">Cut (quality of the cut):</label>
   <select id="cut" name="cut">
     <option value="Fair">Fair</option>
     <option value="Good">Good</option>
@@ -167,7 +167,7 @@
 </div>
   
 <div class="form-group">
-  <label for="color">Color :</label>
+  <label for="color">Color (diamond color):</label>
   <select id="color" name="color">
     <option value="D">D</option>
     <option value="E">E</option>
@@ -180,7 +180,7 @@
 </div>
 
 <div class="form-group">
-  <label for="clarity">Clarity :</label>
+  <label for="clarity">Clarity (how clear the diamond is):</label>
   <select id="clarity" name="clarity">
     <option value="I1">I1</option>
     <option value="SI2">SI2</option>
@@ -193,6 +193,7 @@
   </select>
 </div>
 
+
 <div style="clear:both;"></div>
 <div class="btn">
   <input type="submit" value="Submit">
@@ -203,7 +204,9 @@
 
 <div class="details">
     <div class="details-text">
+        <br>
     <h2 style="color: white; align-self: start; margin: 0px 100px; font-size: 30px; text-decoration: underline;">Details:</h2>
+        <br>
     <div style="color: white; margin: 0px 100px;">The 4 Cs, as they are known within the jewelry industry, are the standard way to measure the beauty, craftsmanship, and value of a diamond.
         <br>
         When writing the grades of a diamond using the AGS Scale, diamond <strong>Cut</strong> grade is <strong>first</strong>, then diamond Color, Clarity, then Carat Weight—in that order.
@@ -284,6 +287,17 @@
         </p>
         <img src="https://diamondexchange.com.au/cdn/shop/files/dx-approx-carat-weight-size-72.dpi_1920x.jpg?v=1640215783" alt="">
         <br>
+        <br>
+        <div style="color: white; font-size: 20px; margin-left: 100px; align-self: start;"><strong>#physical measurements: depth, table, x, y and z</strong></div>
+        <br>
+        <!-- <p style="color: white; margin: 0px 100px 10px 100px; align-self: start;">Clarity refers to a diamond’s natural inclusions, or lack thereof. While small marks within a diamond are natural, their appearance can leave something to be desired if they are visible to the unaided eye.
+            <br>
+            The shape of a diamond can affect the importance of its clarity grade. The facet patterns of the brilliant-cut diamond shapes such as round and princess can hide certain imperfections, but step-cut shapes such as emerald and Asscher have large, open tables that make inclusions more obvious.
+            <br>
+            The lowest clarity grade is SI2. These diamonds may have small visible inclusions. If you are searching for a step-cut diamond, we suggest a minimum clarity grade of VS2.</p>
+        <br> -->
+        <img style="height: 250px;" src="https://bookdown.dongzhuoer.com/hadley/ggplot2-book/diagrams/diamond-dimensions.png" alt="">
+
     </div>
 </div>
 
