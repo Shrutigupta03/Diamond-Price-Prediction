@@ -6,16 +6,16 @@
             margin: 0;
             padding: 0;
             background-image: url('https://static.vecteezy.com/system/resources/previews/006/667/806/original/3d-rendering-many-size-diamonds-on-dark-gray-surface-free-photo.jpg');
-            background-size: cover;
+            background-size: 260vh;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: top;
             
             /* opacity: 0.6; */
         }
 
         form{
-            width: 38%;
-            margin: 32px auto;
+            width: 50%;
+            margin: 32px auto 10px auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,12 +26,11 @@
             box-shadow: 0px 0px 15px 4px rgba(113, 113, 113, 0.562);
             background: rgba(34, 34, 34, 0.773);
             border-radius: 20px;
-            /* opacity: 0.6;  */
         }
         div.form-group{
             display: flex;
             flex-direction: row;
-            width: 298px;
+            width: 403px;
             align-items: center;
             justify-content: center;
             margin: 5px;
@@ -44,7 +43,7 @@
             outline: none;
             font-size: 11px;
             border: 1px solid rgb(255, 255, 255);
-            width: 160px;
+            width: 225px;
             height: 24px;
             border-radius: 8px;
             padding: 0px 10px;
@@ -53,13 +52,13 @@
             border: 1px solid rgb(255, 255, 255);
             font-size: 11px;
             outline: none;
-            width: 160px;
+            width: 225px;
             height: 24px;
             border-radius: 8px;
             padding: 0px 10px;
         }
         div.btn input{
-            width: 170px;
+            width: 200px;
             height: 35px;
             font-size: 20px;
             font-weight: bold;
@@ -78,18 +77,47 @@
         }
 
         div.result{
-            color: white;
+            display: flex;
+            justify-content: space-around;
+            opacity: 0.8;
+            color: rgb(6, 6, 6);
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 30px;
             text-align: center;
-
+            
         }
-        /* div.details img{
+        div.result p{
+            background-color: #ffffff;
+            height: 35px;
+            width: 400px;
+            border-radius: 6px;
+            box-shadow: 0px 0px 7px 3px rgba(0, 0, 0);
+        }
+        div.details{
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(26, 26, 26);
             align-items: center;
+            padding: 10px 100px;
+        }
+        div.details-text{
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(26, 26, 26);
+            align-items: center;
+        }
+        div.details img{
             width: 700px;
             height: 200px;
-        } */
+        }
+        label{
+            width: 220px;
+        }
 
     </style>
 </head>
@@ -98,37 +126,37 @@
 <div style="text-align: center; color: white; font-size: 20px; margin-top: 10px;">Enter the values to predict the price of the diamond</div>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
-        <label style="width: 120px;" for="carat">Carat :</label>
+        <label for="carat">Carat :</label>
         <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
     </div>
 
     <div class="form-group">
-        <label style="width: 120px;" for="depth">Depth :</label>
+        <label for="depth">Depth :</label>
         <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
     </div>
 
     <div class="form-group">  
-        <label style="width: 120px;" for="table">Table :</label>
+        <label for="table">Table :</label>
         <input type="text" id="table" name="table" placeholder="Enter table value (float)">
     </div>
     
     <div class="form-group">
-        <label style="width: 120px;" for="x">x :</label>
+        <label  for="x">x :</label>
         <input type="text" id="x" name="x" placeholder="Enter x value (float)">
     </div>
   
     <div class="form-group">
-        <label style="width: 120px;" for="y">y :</label>
+        <label  for="y">y :</label>
         <input  type="text" id="y" name="y" placeholder="Enter y value (float)">
     </div>
   
     <div class="form-group">
-        <label style="width: 120px;" for="z">z :</label>
+        <label for="z">z :</label>
         <input type="text" id="z" name="z" placeholder="Enter z value (float)">
     </div>         
   
 <div class="form-group">
-  <label style="width: 120px;" for="cut">Cut :</label>
+  <label for="cut">Cut :</label>
   <select id="cut" name="cut">
     <option value="Fair">Fair</option>
     <option value="Good">Good</option>
@@ -139,7 +167,7 @@
 </div>
   
 <div class="form-group">
-  <label style="width: 120px;" for="color">Color :</label>
+  <label for="color">Color :</label>
   <select id="color" name="color">
     <option value="D">D</option>
     <option value="E">E</option>
@@ -152,7 +180,7 @@
 </div>
 
 <div class="form-group">
-  <label style="width: 120px;" for="clarity">Clarity :</label>
+  <label for="clarity">Clarity :</label>
   <select id="clarity" name="clarity">
     <option value="I1">I1</option>
     <option value="SI2">SI2</option>
@@ -171,11 +199,93 @@
 </div>
 </form>
 
-<div class="result">Predicted Value : {{final_result}} </div>
+<div class="result"><p>Predicted Price : {{final_result}} </p></div>
 
-<!-- <div class="details">
-    <img src="https://www.americangemsociety.org/wp-content/uploads/2020/11/AGS%20Clarity%20Scale-2048x726.png" alt="">
-</div> -->
+<div class="details">
+    <div class="details-text">
+    <h2 style="color: white; align-self: start; margin: 0px 100px; font-size: 30px; text-decoration: underline;">Details:</h2>
+    <div style="color: white; margin: 0px 100px;">The 4 Cs, as they are known within the jewelry industry, are the standard way to measure the beauty, craftsmanship, and value of a diamond.
+        <br>
+        When writing the grades of a diamond using the AGS Scale, diamond <strong>Cut</strong> grade is <strong>first</strong>, then diamond Color, Clarity, then Carat Weight—in that order.
+        <br>
+        If a diamond possessing the finest diamond Cut grade is also colorless, free of inclusions and blemishes, and weighs one carat, it would be written as: 0/0/0–1.000 carat.</div>
+
+        <br>
+        <br>
+        <div style="color: white; font-size: 20px; margin-left: 100px; align-self: start;"><strong>#Cut Scale:</strong></div>
+        <br>
+        <p style="color: white; margin: 0px 100px 10px 100px; align-self: start;">The term “diamond cut” refers to the quality of a diamond’s proportions and symmetry. These elements determine how much light a diamond captures and reflects, and therefore how much it sparkles. This is a direct result of the skill of the craftsman who shaped and cut the diamond.
+            <br>
+            The grades of diamond cut: Ideal, Premium, Very Good, Good, Fair and Poor.
+            <br>
+            If you compare two diamonds of different cuts grades, you will see that the higher cut grade has significantly more sparkle. There will also be a difference in their prices, with the better cut grade commanding a higher price. Of the 4 Cs, cut is generally recognized as the most important, since it has the greatest impact on a diamond’s appearance and quality.</p>
+            <br>
+            <img style="height: 220px;" src="https://ucarecdn.com/2d158ea6-1a67-4a03-b5c7-b7906087488a/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+
+        <br>
+        <br>
+        <div style="color: white; font-size: 20px; margin-left: 100px; align-self: start;"><strong>#Color Scale:</strong></div>
+        <br>
+        <p style="color: white; margin: 0px 100px 10px 100px; align-self: start;">Though it may seem counterintuitive, a diamond’s color grade actually measures how little color it reflects.
+            <br>
+            The diamond color grading scale begins with “D” and ranges down to “Z”. A diamond assigned a grade of “D” has absolutely no color -- it looks pure white, even to a gemologist inspecting it carefully under 10X magnification. On the other hand, a diamond assigned a grade of “Z” looks yellow or brownish.
+            <br>
+            Colorless (D, E, F): Pairs well with platinum, palladium, and white gold.
+            <br>
+            Near-Colorless (G, H, I, J): Pairs well with white, yellow, or rose gold. 
+            <br>
+            Noticeable Color (K, L): Pairs well with yellow gold or rose gold.
+        </p>
+        <br>
+        <img src="https://assets.diamondnexus.com/diamond_nexus/blog/2019/may/29a/1.jpg" alt="">
+
+        <br>
+        <br>
+        <div style="color: white; font-size: 20px; margin-left: 100px; align-self: start;"><strong>#Clarity Scale:</strong></div>
+        <br>
+        <p style="color: white; margin: 0px 100px 10px 100px; align-self: start;">Clarity refers to a diamond’s natural inclusions, or lack thereof. While small marks within a diamond are natural, their appearance can leave something to be desired if they are visible to the unaided eye.
+            <br>
+            The shape of a diamond can affect the importance of its clarity grade. The facet patterns of the brilliant-cut diamond shapes such as round and princess can hide certain imperfections, but step-cut shapes such as emerald and Asscher have large, open tables that make inclusions more obvious.
+            <br>
+            The lowest clarity grade is SI2. These diamonds may have small visible inclusions. If you are searching for a step-cut diamond, we suggest a minimum clarity grade of VS2.</p>
+        <br>
+        <img src="https://diamondexchangehouston.com/wp-content/uploads/2020/05/Diamond-Clarity.jpg" alt="">
+
+        <br>
+        <br>
+        <div style="color: white; font-size: 20px; margin-left: 100px; align-self: start;"><strong>#Carat Scale:</strong></div>
+        <br>
+        <p style="color: white; margin: 0px 100px 10px 100px; align-self: start;">Carat is the measure of how much a diamond weighs. Carat is also related to size (how big a diamond looks), although it’s not the only factor that determines size. Depending on shape, weight distribution and cut quality, two diamonds with the same carat weight can be different sizes.
+            <br>
+            It’s worth noting that some diamonds are cut solely with an emphasis on weight. These gems can sacrifice brilliance and symmetry in favor of delivering a larger carat figure.
+            <br>
+            <ul style="color: white; margin: 0px 100px 10px 100px; align-self: start; ">
+            <li><strong>.25CT</strong> - Focus on finding a cut grade of Very Good or Ideal for a brilliantly sparkling diamond.
+        </li><br>
+        <li><strong>0.50CT</strong> - Inclusions will be difficult to see in a 0.50 carat diamond, so lower the clarity grade and focus on getting the best color and cut grade within your budget.
+        </li><br>
+        <li><strong>.75CT</strong> - At this size, any visible inclusions will be less noticeable, so you can afford to go for a lower clarity grade such as SI1 or SI2. Seek a cut grade of Very Good or Ideal.
+        </li><br>
+        <li><strong>1CT</strong> - If you’re looking for a solitaire engagement ring, focus on Ideal cut with Excellent polish and symmetry grades. If you’re pairing with side stones or a halo, focus on higher color and clarity grades.
+        </li><br>
+        <li><strong>1.25CT</strong> - If shopping for a diamond 1.25 carats or larger, opt for VS2 clarity or better, since inclusions are more noticeable in larger diamonds.
+        </li><br>
+        <li><strong>1.5CT</strong> - As an above-average purchase price, focus on mid-range color and clarity while maximizing cut grade.
+        </li><br>
+        <li><strong>2CT</strong> - Some SI inclusions will be visible with the unaided eye, so avoid anything less than VS1 clarity.
+        </li><br>
+        <li><strong>3CT</strong> - The larger size magnifies any natural inclusions, so if choosing a diamond lower than VS1 clarity grade, make sure it is eye-clean. Avoid any diamonds with fluorescence in this carat range and above.
+        </li><br>
+        <li><strong>4CT</strong> - Approaching the ultra-luxe, look for diamonds whose natural inclusions are on the pavilion side of the diamond, where they will be less noticeable.
+        </li><br>
+        <li><strong>5CT</strong> - The ultimate in luxury; go for the Triple X: Excellent polish, Excellent symmetry and Excellent cut.
+        </li>
+        </ul>
+        </p>
+        <img src="https://diamondexchange.com.au/cdn/shop/files/dx-approx-carat-weight-size-72.dpi_1920x.jpg?v=1640215783" alt="">
+        <br>
+    </div>
+</div>
 
 
 </body>
