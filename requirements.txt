@@ -4,4 +4,4 @@ flask
 seaborn
 scikit-learn
 
-# -e .
+-e .

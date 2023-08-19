@@ -1,16 +1,17 @@
 import numpy as np 
-import pandas as pd 
+import pandas as pd
+import os, sys 
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
-
 from src.exception import CustomException
 from src.logger import logging
+
 from src.utils import save_object
 from src.utils import evaluate_model
 from dataclasses import dataclass
-import os, sys
+
 
 @dataclass
 class ModelTrainerConfig:
@@ -37,7 +38,7 @@ class ModelTrainer:
             'ElasticNet': ElasticNet(),
             'DecisionTree':DecisionTreeRegressor(),
             'RandonForest':RandomForestRegressor()
-            }
+        }
 
             model_report:dict=evaluate_model(X_train, y_train, X_test, y_test, models)
             print('\n=====================================================================')

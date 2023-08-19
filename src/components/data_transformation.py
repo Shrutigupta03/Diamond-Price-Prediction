@@ -8,9 +8,9 @@ from sklearn.compose import ColumnTransformer ## Column Transformer
 import numpy as np 
 import pandas as pd
 
+import sys,os
 from src.exception import CustomException
 from src.logger import logging
-import sys,os
 from dataclasses import dataclass
 
 from src.utils import save_object
