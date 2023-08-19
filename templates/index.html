@@ -34,7 +34,6 @@
             align-items: center;
             justify-content: center;
             margin: 5px;
-            font-weight: 545;
             font-size: 20px;
             opacity: 1;
         }
@@ -126,37 +125,37 @@
 <div style="text-align: center; color: white; font-size: 20px; margin-top: 10px;">Enter the values to predict the price of the diamond</div>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
     <div class="form-group">
-        <label for="carat">Carat (weight of the diamond):</label>
+        <label for="carat"><strong>Carat</strong> (weight of the diamond):</label>
         <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
     </div>
 
     <div class="form-group">
-        <label for="depth">Depth (Total depth percentage):</label>
+        <label for="depth"><strong>Depth</strong> (Total depth percentage):</label>
         <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
     </div>
 
     <div class="form-group">  
-        <label for="table">Table (width of top of diamond):</label>
+        <label for="table"><strong>Table</strong> (width of top of diamond):</label>
         <input type="text" id="table" name="table" placeholder="Enter table value (float)">
     </div>
     
     <div class="form-group">
-        <label  for="x">x (length in mm):</label>
+        <label  for="x"><strong>x</strong> (length in mm):</label>
         <input type="text" id="x" name="x" placeholder="Enter x value (float)">
     </div>
   
     <div class="form-group">
-        <label  for="y">y (width in mm):</label>
+        <label  for="y"><strong>y</strong> (width in mm):</label>
         <input  type="text" id="y" name="y" placeholder="Enter y value (float)">
     </div>
   
     <div class="form-group">
-        <label for="z">z (depth in mm):</label>
+        <label for="z"><strong>z</strong> (depth in mm):</label>
         <input type="text" id="z" name="z" placeholder="Enter z value (float)">
     </div>         
   
 <div class="form-group">
-  <label for="cut">Cut (quality of the cut):</label>
+  <label for="cut"><strong>Cut</strong> (quality of the cut):</label>
   <select id="cut" name="cut">
     <option value="Fair">Fair</option>
     <option value="Good">Good</option>
@@ -167,7 +166,7 @@
 </div>
   
 <div class="form-group">
-  <label for="color">Color (diamond color):</label>
+  <label for="color"><strong>Color</strong> (diamond color):</label>
   <select id="color" name="color">
     <option value="D">D</option>
     <option value="E">E</option>
@@ -180,7 +179,7 @@
 </div>
 
 <div class="form-group">
-  <label for="clarity">Clarity (how clear the diamond is):</label>
+  <label for="clarity"><strong>Clarity</strong> (how clear the diamond is):</label>
   <select id="clarity" name="clarity">
     <option value="I1">I1</option>
     <option value="SI2">SI2</option>
