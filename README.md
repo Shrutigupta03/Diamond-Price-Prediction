@@ -22,3 +22,23 @@ Target variable:
 
 Dataset Source Link :
 [https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv](https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv)
+
+
+### Bar Graphs Showing Relation between Categorical Features ans Price:
+
+**Price Vs Cut**
+
+![image](https://github.com/Shrutigupta03/Diamond-Price-Prediction/assets/105665662/520d3e31-f2bd-4404-aeb7-f19cf7ae047c)
+
+
+**Price Vs Clarity**
+
+![image](https://github.com/Shrutigupta03/Diamond-Price-Prediction/assets/105665662/162e6236-9898-4296-8270-071a4542db8b)
+
+
+**Price Vs Color**
+
+![image](https://github.com/Shrutigupta03/Diamond-Price-Prediction/assets/105665662/9fe3c563-2d9b-4675-a350-7bf37f3eaaf3)
+
+
+
