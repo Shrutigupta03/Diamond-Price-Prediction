@@ -24,7 +24,7 @@ Dataset Source Link :
 [https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv](https://www.kaggle.com/competitions/playground-series-s3e8/data?select=train.csv)
 
 
-### Bar Graphs Showing Relation between Categorical Features ans Price:
+### Bar Graphs Showing Relation between Categorical Features and Price:
 
 **Price Vs Cut**
 
